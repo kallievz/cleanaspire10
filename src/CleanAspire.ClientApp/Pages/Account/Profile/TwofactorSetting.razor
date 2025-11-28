@@ -119,7 +119,7 @@
 </MudDialog>
 @code {
 
-    private DialogOptions dialogOptions = new() { MaxWidth = MaxWidth.Small, CloseOnEscapeKey = true, CloseButton = true };
+    private DialogOptions dialogOptions = new() { MaxWidth = MudBlazor.MaxWidth.Small, CloseOnEscapeKey = true, CloseButton = true };
     private bool _showConfigureAuthenticatorAppDialog;
     private string? qrCode;
     private string? verificationCode;
@@ -159,9 +159,9 @@
             if (response is not null)
             {
                 _showConfigureAuthenticatorAppDialog = true;
-                authenticatorUri = response.AuthenticatorUri;
-                sharedKey = response.SharedKey;
-                var qr = QrCode.EncodeText(response.AuthenticatorUri, QrCode.Ecc.Medium);
+                authenticatorUri = response.AuthenticatorUri!;
+                sharedKey = response.SharedKey!;
+                var qr = Net.Codecrete.QrCodeGenerator.QrCode.EncodeText(response.AuthenticatorUri, Net.Codecrete.QrCodeGenerator.QrCode.Ecc.Medium);
                 qrCode = qr.ToSvgString(4);
             }
         }

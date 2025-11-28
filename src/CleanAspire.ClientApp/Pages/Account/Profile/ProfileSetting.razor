@@ -12,7 +12,7 @@
             <MudTextField Label="@L["Email"]" @bind-Value="model.Email" For="@(() => model.Email)" ShrinkLabel="true" ReadOnly></MudTextField>
             <TimeZoneAutocomplete T="string" For="@(() => model.TimeZoneId)" @bind-Value="model.TimeZoneId" Label="@L["Time Zone"]"></TimeZoneAutocomplete>
             <LanguageAutocomplete T="string" For="@(() => model.LanguageCode)" @bind-Value="model.LanguageCode" Label="@L["Language"]"></LanguageAutocomplete>
-            <MudButton ButtonType="ButtonType.Submit" Color="Color.Primary" Class="ml-auto">@L["Save Profile"]</MudButton>
+            <MudButton ButtonType="MudBlazor.ButtonType.Submit" Color="Color.Primary" Class="ml-auto">@L["Save Profile"]</MudButton>
         </div>
         <div class="d-flex flex-column  gap-1 px-4">
             @if (!string.IsNullOrEmpty(model.AvatarUrl))

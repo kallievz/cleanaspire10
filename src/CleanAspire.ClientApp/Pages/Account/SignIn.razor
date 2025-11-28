@@ -42,13 +42,13 @@
                         <MudLink Href="/account/forgetpassword">@L["Forget password?"]</MudLink>
                     </div>
                 }
-                <MudButton ButtonType="ButtonType.Submit" FullWidth="true" Variant="Variant.Filled" Color="Color.Primary">@L["Sign In"]</MudButton>
+                <MudButton ButtonType="MudBlazor.ButtonType.Submit" FullWidth="true" Variant="Variant.Filled" Color="Color.Primary">@L["Sign In"]</MudButton>
                 @if (!RequiresTwoFactor){
-                    <MudButton StartIcon="@Icons.Custom.Brands.Google" ButtonType="ButtonType.Button" FullWidth="true" Variant="Variant.Outlined" OnClick="LoginWithGoogle" Color="Color.Default">@L["Login with Google"]</MudButton>
+                    <MudButton StartIcon="@Icons.Custom.Brands.Google" ButtonType="MudBlazor.ButtonType.Button" FullWidth="true" Variant="Variant.Outlined" OnClick="LoginWithGoogle" Color="Color.Default">@L["Login with Google"]</MudButton>
                 }
                 @if (!RequiresTwoFactor)
                 {
-                    <MudButton StartIcon="@Icons.Custom.Brands.Microsoft" ButtonType="ButtonType.Button" FullWidth="true" Variant="Variant.Outlined" OnClick="LoginWithMicrosoft" Color="Color.Default">@L["Login with Microsoft"]</MudButton>
+                    <MudButton StartIcon="@Icons.Custom.Brands.Microsoft" ButtonType="MudBlazor.ButtonType.Button" FullWidth="true" Variant="Variant.Outlined" OnClick="LoginWithMicrosoft" Color="Color.Default">@L["Login with Microsoft"]</MudButton>
                 }
             </div>
         </EditForm>

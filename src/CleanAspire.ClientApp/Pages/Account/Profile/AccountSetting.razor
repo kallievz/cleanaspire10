@@ -72,7 +72,7 @@
     private bool deleteSuccess;
     private string? newEmailAddress;
 
-    private DialogOptions dialogOptions = new() { MaxWidth = MaxWidth.ExtraSmall, CloseOnEscapeKey = true, CloseButton = true };
+    private DialogOptions dialogOptions = new() { MaxWidth = MudBlazor.MaxWidth.ExtraSmall, CloseOnEscapeKey = true, CloseButton = true };
     private ProfileResponse? model => UserProfileStore.Profile;
 
     private async Task OnChangeMyEmail()

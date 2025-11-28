@@ -81,7 +81,7 @@
     private bool _loading = false;
     private readonly string[] tags = new[] { "stocks" };
     private readonly TimeSpan timeSpan = TimeSpan.FromSeconds(30);
-    private async Task<GridData<StockDto>> ServerReload(GridState<StockDto> state)
+    private async Task<GridData<StockDto>> ServerReload(MudBlazor.GridState<StockDto> state)
     {
         try
         {
@@ -119,7 +119,7 @@
         {
            {x=>x.Inbound, true}
         };
-        await DialogServiceHelper.ShowDialogAsync<StockDialog>(L["Stock receiving"], parameters, new DialogOptions() { MaxWidth = MaxWidth.Small },
+        await DialogServiceHelper.ShowDialogAsync<StockDialog>(L["Stock receiving"], parameters, new DialogOptions() { MaxWidth = MudBlazor.MaxWidth.Small },
         async (state) =>
         {
             if (state is not null && !state.Canceled)
@@ -135,9 +135,9 @@
         var parameters = new DialogParameters<StockDialog>
         {
            {x=>x.Inbound, false},
-           {x=>x.model, new StockDialog.Model(){ Location = item.Location, Quantity=item.Quantity, ProductId=item.ProductId } }
+           {x=>x.model, new StockDialog.Model(){ Location = item.Location!, Quantity=item.Quantity, ProductId=item.ProductId } }
         };
-        await DialogServiceHelper.ShowDialogAsync<StockDialog>(L["Stock dispatching"], parameters, new DialogOptions() { MaxWidth = MaxWidth.Small },
+        await DialogServiceHelper.ShowDialogAsync<StockDialog>(L["Stock dispatching"], parameters, new DialogOptions() { MaxWidth = MudBlazor.MaxWidth.Small },
         async (state) =>
         {
             if (state is not null && !state.Canceled)

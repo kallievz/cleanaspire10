@@ -34,7 +34,7 @@
                 <div class="d-flex flex-row align-center justify-space-between">
                     <MudCheckBox @bind-Value="model.CheckPrivacy" For="@(() => model.CheckPrivacy)">@L["I agree to the terms and privacy"]</MudCheckBox>
                 </div>
-                <MudButton Disabled="@waiting" ButtonType="ButtonType.Submit" Color="Color.Primary">@L["Signup"]</MudButton>
+                <MudButton Disabled="@waiting" ButtonType="MudBlazor.ButtonType.Submit" Color="Color.Primary">@L["Signup"]</MudButton>
             </div>
         </EditForm>
     </div>
